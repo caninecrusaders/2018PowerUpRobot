@@ -1,17 +1,14 @@
 package org.usfirst.frc4980.PowerUp2018.commands;
 
-import org.usfirst.frc4980.PowerUp2018.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class orientCubeLeft extends Command {
+public class cubeGrab extends Command {
 
-    public orientCubeLeft() {
-       requires(Robot.driveSystem);
-    	// Use requires() here to declare subsystem dependencies
+    public cubeGrab() {
+        // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
