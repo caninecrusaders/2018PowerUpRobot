@@ -38,8 +38,8 @@ public class Elevator extends Subsystem {
 	static final double kD = 0.00;
     static final double kF = 0.00;
     static final double kTolerance = 0.043681f;
-    public static final double maxHeight = 3.85; //2.2
-    public static final double minHeight = 2.1; //0.6
+    public static final double maxHeight = 2.77; //3.85; //2.2
+    public static final double minHeight = 1.09; //2.2; //0.6
     private double moveToHeight = -1;
     
 	// Put methods for controlling this subsystem

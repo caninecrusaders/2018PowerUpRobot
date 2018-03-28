@@ -16,7 +16,7 @@ public class cgRightScaleAutoRight extends CommandGroup {
 //        addSequential(new cmdDriveCurve(0.3, .9, 0, .4));
 //        addSequential(new cmdDriveCurve(.9, 0.3, 0, .4));
     	addParallel(new cgRightScaleAutoDriving());
-        addParallel(new cmdIntakeArmsOpen(1.0));
+       // addParallel(new cmdIntakeArmsOpen(1.0));
         addSequential(new cmdElevatorUp(2.9, 1.0));
        // addSequential(new cmdDriveCurve(0.2, 0.3, 0, .9));
         addSequential(new cmdElevatorCubeDeposit(0.5));
@@ -24,6 +24,7 @@ public class cgRightScaleAutoRight extends CommandGroup {
         addSequential(new cmdElevatorReset(2.9, 1.0));
         addSequential(new cmdDriveTurnToAngleTime(.5, -0.8));
         addSequential(new cmdTogglePivot());
+        
   
     	
     	

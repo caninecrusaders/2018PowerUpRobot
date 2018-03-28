@@ -211,6 +211,18 @@ public class Robot extends TimedRobot {
     	  }else{
     		  priorityScale = (Priority)rightScaleChooser.getSelected();
     	  }
+    	  if(isScaleLeft && isSwitchLeft && position == Position.right){
+    		  //Drive Forward only
+    		  autonomousCommand = new cgAutoDriveForward();
+    		  if (autonomousCommand != null) autonomousCommand.start();
+    		  return;
+    	  }
+    	  if(!isScaleLeft && !isSwitchLeft && position == Position.left){
+    		  //Drive Forward only
+    		  autonomousCommand = new cgAutoDriveForward();
+    		  if (autonomousCommand != null) autonomousCommand.start();
+    		  return;
+    	  }
     	  
     	   if(position == Position.left ){
     		  // SmartDashboard.putString("Auto", "Position Left");

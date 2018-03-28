@@ -7,26 +7,20 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class cgLeftScaleAutoLeft extends CommandGroup {
+public class cgLeftScaleAutoDriving extends CommandGroup {
 
-    public cgLeftScaleAutoLeft() {
-    	
-    	addParallel(new cgLeftScaleAutoDriving());
-        //addParallel(new cmdIntakeArmsOpen(1.0));
-        addSequential(new cmdElevatorUp(2.9, 1.0));
-        addSequential(new cmdElevatorCubeDeposit(0.5));
-        addSequential(new cmdDriveForwardNoEase(.5, -0.5));
-        addSequential(new cmdElevatorReset(2.9, 1.0));
-        addSequential(new cmdDriveTurnToAngleTime(.5, 0.8));
-        addSequential(new cmdTogglePivot());
-        
-        requires(Robot.driveSystem);
-        requires(Robot.elevator);
-        requires(Robot.intake);
+    public cgLeftScaleAutoDriving() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
+    	addSequential(new cmdDriveForwardNoEase(1.3, 1.0));
+        addSequential(new cmdDriveCurve(.9, .3, 0, .4));
+        addSequential(new cmdDriveCurve(.3, 0.9, 0, .4));
+        addSequential(new cmdDriveCurve(0.2, 0.2, 0, .9));
+        
+        
+        requires(Robot.driveSystem);
 
         // To run multiple commands at the same time,
         // use addParallel()

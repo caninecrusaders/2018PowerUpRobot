@@ -12,7 +12,7 @@ public class cgRightScaleAutoDriving extends CommandGroup {
     public cgRightScaleAutoDriving() {
     	
     	//addSequential(new cmdCubeHold());
-        addSequential(new cmdDriveForwardNoEase(1.2, 1.0));
+        addSequential(new cmdDriveForwardNoEase(1.3, 1.0));
         addSequential(new cmdDriveCurve(0.3, .9, 0, .4));
         addSequential(new cmdDriveCurve(.9, 0.3, 0, .4));
        // addSequential(new cmdDriveCurve(1.0, 0.4, 0, .3));

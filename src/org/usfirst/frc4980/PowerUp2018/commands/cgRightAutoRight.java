@@ -11,13 +11,13 @@ public class cgRightAutoRight extends CommandGroup {
 	
     public cgRightAutoRight() {
     	addSequential(new cmdCubeHold());
-    	addSequential(new cmdDriveForwardNoEase(1.1, 1.0));
-    	addParallel(new cmdIntakeArmsOpen(1.0));
-    	addParallel(new cmdDriveTurnToAngleTime(0.4, -0.40));
-        addSequential(new cmdElevatorUp(1.0, 0.7));
-        addSequential(new cmdDriveForwardNoEase(0.5, 0.5));
-        addSequential(new cmdElevatorCubeDeposit(0.5));
-        addSequential(new cmdElevatorReset(2.0, 1.0));
+    	addSequential(new cmdDriveForwardNoEase(1.2, 1.0));
+//    	addParallel(new cmdIntakeArmsOpen(1.0));
+//    	addParallel(new cmdDriveTurnToAngleTime(0.4, -0.40));
+//        addSequential(new cmdElevatorUp(1.0, 0.7));
+//        addSequential(new cmdDriveForwardNoEase(0.5, 0.5));
+//        addSequential(new cmdElevatorCubeDeposit(0.5));
+//        addSequential(new cmdElevatorReset(2.0, 1.0));
         
         requires(Robot.driveSystem);
         requires(Robot.elevator);

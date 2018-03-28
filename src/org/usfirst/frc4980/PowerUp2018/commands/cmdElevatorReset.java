@@ -21,6 +21,7 @@ public class cmdElevatorReset extends Command {
     protected void initialize(double speed) {
     	Robot.elevator.release();
     	Robot.elevator.retract();
+    	Robot.intake.openArms();
     	Robot.elevator.elevatorDown(speed);
     }
 
