@@ -12,18 +12,23 @@ public class cgRightScaleAutoLeft extends CommandGroup {
     public cgRightScaleAutoLeft() {
     	
     	addSequential(new cmdCubeHold());
-        addSequential(new cmdDriveForwardNoEase(1.2, 1.0));
-        addSequential(new cmdDriveCurve(1.0, 0.2, 0, .4));
-        addSequential(new cmdDriveCurve(0.2, 1.0, 0, .4));
-       // addSequential(new cmdDriveCurve(1.0, 0.4, 0, .3));
-        addParallel(new cmdIntakeArmsOpen(1.0));
+        addSequential(new cmdDriveForwardNoEase(1.4, 1.0));
+        addSequential(new cmdDriveCurve(0.25, 1.0, 0, .6));
+        addSequential(new cmdDriveForwardNoEase(1.0, 1.0));
+        addSequential(new cmdDriveCurve(1.0, .2, 0, .55));
         addSequential(new cmdElevatorUp(2.9, 1.0));
-        addSequential(new cmdDriveCurve(0.3, 0.2, 0, 1.2));
-        addSequential(new cmdElevatorCubeDeposit(0.5));
-        addSequential(new cmdDriveForwardNoEase(.5, -0.5));
-        addSequential(new cmdElevatorReset(2.9, 1.0));
-        addSequential(new cmdDriveTurnToAngleTime(.5, 0.8));
-        addSequential(new cmdTogglePivot());
+        addSequential(new cmdDriveForwardNoEase(.2, 0.5));
+        addSequential(new cmdDriveForwardNoEase(.3, -0.5));
+        addParallel(new cmdElevatorReset(2.9, 1.0));
+        addSequential(new cmdDriveTurnToAngleTime(.5, 0.75));
+        // addSequential(new cmdDriveCurve(1.0, 0.4, 0, .3));
+//        addParallel(new cmdIntakeArmsOpen(1.0));      
+//        addSequential(new cmdDriveCurve(0.3, 0.2, 0, 1.2));
+//        addSequential(new cmdElevatorCubeDeposit(0.5));
+//        addSequential(new cmdDriveForwardNoEase(.5, -0.5));
+//        addSequential(new cmdElevatorReset(2.9, 1.0));
+//        addSequential(new cmdDriveTurnToAngleTime(.5, 0.8));
+//        addSequential(new cmdTogglePivot());
         
         
         

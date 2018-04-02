@@ -211,18 +211,24 @@ public class Robot extends TimedRobot {
     	  }else{
     		  priorityScale = (Priority)rightScaleChooser.getSelected();
     	  }
-    	  if(isScaleLeft && isSwitchLeft && position == Position.right){
-    		  //Drive Forward only
-    		  autonomousCommand = new cgAutoDriveForward();
-    		  if (autonomousCommand != null) autonomousCommand.start();
-    		  return;
-    	  }
-    	  if(!isScaleLeft && !isSwitchLeft && position == Position.left){
-    		  //Drive Forward only
-    		  autonomousCommand = new cgAutoDriveForward();
-    		  if (autonomousCommand != null) autonomousCommand.start();
-    		  return;
-    	  }
+    	  
+//    	  SmartDashboard.putNumber("Switch Compared to Scale", priorityScale.compareTo(prioritySwitch));
+//    	  SmartDashboard.putNumber("Zero Switch", prioritySwitch.compareTo(Priority.zero));
+//    	  SmartDashboard.putNumber("Zero Scale", priorityScale.compareTo(Priority.zero));
+//    	  if(isScaleLeft && isSwitchLeft && position == Position.right){
+//    		  //Drive Forward only
+//    		  autonomousCommand = new cgAutoDriveForward();
+//    		//  if (autonomousCommand != null) autonomousCommand.start();
+//    		  SmartDashboard.putData("Autonomous Command", autonomousCommand);
+//    		  return;
+//    	  }
+//    	  if(!isScaleLeft && !isSwitchLeft && position == Position.left){
+//    		  //Drive Forward only
+//    		  autonomousCommand = new cgAutoDriveForward();
+//    		  SmartDashboard.putData("Autonomous Command", autonomousCommand);
+//    		//  if (autonomousCommand != null) autonomousCommand.start();
+//    		  return;
+//    	  }
     	  
     	   if(position == Position.left ){
     		  // SmartDashboard.putString("Auto", "Position Left");
@@ -251,7 +257,7 @@ public class Robot extends TimedRobot {
     	   } else if(position == Position.right){
     		  // SmartDashboard.putString("Auto", "Position Right");
     		   if(prioritySwitch.compareTo(priorityScale)< 0 && prioritySwitch.compareTo(Priority.zero) != 0){
-     			  if(isSwitchLeft){
+     			  if(isSwitchLeft){ //this is a switch
      				  autonomousCommand = new cgRightAutoLeft();
      			  }else {
      				  autonomousCommand = new cgRightAutoRight();
@@ -303,10 +309,10 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
-    	SmartDashboard.putData("Intake", Robot.intake );
-        SmartDashboard.putData("Drive System", Robot.driveSystem );
-        SmartDashboard.putData("Vision", Robot.vision );
-        SmartDashboard.putData("Elevator", Robot.elevator );
+    	//SmartDashboard.putData("Intake", Robot.intake );
+        //SmartDashboard.putData("Drive System", Robot.driveSystem );
+        //SmartDashboard.putData("Vision", Robot.vision );
+        //SmartDashboard.putData("Elevator", Robot.elevator );
         SmartDashboard.putNumber("IntakeState", Robot.intake.intakeState);
         Scheduler.getInstance().run();
         SmartDashboard.putNumber( "IMU_TotalYaw", ahrs.getAngle());
