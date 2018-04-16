@@ -11,15 +11,32 @@ public class cgLeftScaleAutoLeft extends CommandGroup {
 
     public cgLeftScaleAutoLeft() {
     	
+    	
+    	addSequential(new cmdCubeHold());
     	addParallel(new cgLeftScaleAutoDriving());
-        //addParallel(new cmdIntakeArmsOpen(1.0));
         addSequential(new cmdElevatorUp(2.9, 1.0));
         addSequential(new cmdElevatorCubeDeposit(0.5));
-        addSequential(new cmdDriveForwardNoEase(.5, -0.5));
-        addSequential(new cmdElevatorReset(2.9, 1.0));
-        addSequential(new cmdDriveTurnToAngleTime(.5, 0.8));
-        addSequential(new cmdTogglePivot());
-        
+        addSequential(new cmdDriveForwardNoEase(1.5, -0.5));
+        addParallel(new cmdElevatorReset(2.9, 1.0));
+//        addSequential(new cmdDriveTurnToAngleTime(.5, 0.75));
+        //addSequential(new cmdTogglePivot());
+        addSequential(new cmdIntakeArmsOpen(.2));
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+//    	addParallel(new cgLeftScaleAutoDriving());
+//        //addParallel(new cmdIntakeArmsOpen(1.0));
+//        addSequential(new cmdElevatorUp(2.9, 1.0));
+//        addSequential(new cmdElevatorCubeDeposit(0.5));
+//        addSequential(new cmdDriveForwardNoEase(.5, -0.5));
+//        addSequential(new cmdElevatorReset(2.9, 1.0));
+//        addSequential(new cmdDriveTurnToAngleTime(.5, 0.8));
+//        addSequential(new cmdTogglePivot());
+//        
         requires(Robot.driveSystem);
         requires(Robot.elevator);
         requires(Robot.intake);

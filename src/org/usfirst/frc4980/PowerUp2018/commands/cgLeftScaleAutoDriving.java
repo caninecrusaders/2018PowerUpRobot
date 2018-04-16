@@ -14,10 +14,16 @@ public class cgLeftScaleAutoDriving extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-    	addSequential(new cmdDriveForwardNoEase(1.3, 1.0));
-        addSequential(new cmdDriveCurve(.9, .3, 0, .4));
-        addSequential(new cmdDriveCurve(.3, 0.9, 0, .4));
-        addSequential(new cmdDriveCurve(0.2, 0.2, 0, .9));
+    	addSequential(new cmdDriveForwardNoEase(1.6, 1.0));
+        addSequential(new cmdDriveCurve(0.9, 0.3, 0, .4));
+        addSequential(new cmdDriveForwardNoEase(0.2, 1.0));
+    	
+    	
+    	
+//    	addSequential(new cmdDriveForwardNoEase(1.3, 1.0));
+//        addSequential(new cmdDriveCurve(.9, .3, 0, .4));
+//        addSequential(new cmdDriveCurve(.3, 0.9, 0, .4));
+//        addSequential(new cmdDriveCurve(0.2, 0.2, 0, .9));
         
         
         requires(Robot.driveSystem);
