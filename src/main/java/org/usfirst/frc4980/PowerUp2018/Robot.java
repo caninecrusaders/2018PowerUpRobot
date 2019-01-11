@@ -322,7 +322,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("Elevator Pot", RobotMap.pot.getVoltage());
     }
     public void free(){
-    	TFMini.free();
+    	// TFMini.free();
     	System.out.println("Free");
     	super.free();
     }
